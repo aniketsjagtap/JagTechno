@@ -1,42 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Learn how to get started with ESP32 for IoT applications. Step-by-step guide, tools, and examples." />
-  <title>Getting Started with ESP32 for IoT Projects | JagTechno</title>
-  <link rel="canonical" href="https://aniketsjagtap.github.io/JagTechno/blog/esp32-getting-started.html" />
+    <!-- Google Tag Manager -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-03NF25E06E"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-03NF25E06E');
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with ESP32 for IoT Projects | JagTechno Blog</title>
+    <meta name="description" content="Learn how to get started with ESP32 for IoT applications. Step-by-step guide, tools, and examples.">
+    <meta name="author" content="JagTechno">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS Libraries -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../styles.css">
 </head>
-<body>
-  <header>
-    <h1>Getting Started with ESP32 for IoT Projects</h1>
-    <p><em>by JagTechno • April 2025</em></p>
-  </header>
+<body class="d-flex flex-column min-vh-100">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" style="background-color: var(--primary);">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="../index.html#page-top">
+                <i class="fas fa-microchip me-2"></i>JagTechno
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto py-4 py-lg-0">
+                    <li class="nav-item"><a class="nav-link px-lg-3 rounded" href="../index.html#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 rounded" href="../index.html#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 rounded" href="../index.html#portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 rounded" href="../index.html#contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-  <article>
-    <p>The ESP32 is a powerful microcontroller with Wi-Fi and Bluetooth built in, making it ideal for IoT projects. In this guide, we’ll walk through setup, tools, and basic coding to get your first ESP32 project running.</p>
+    <!-- Header -->
+    <header class="masthead" style="min-height: 40vh; height: 40vh; background-attachment: scroll;">
+        <div class="container px-4 px-lg-5 h-100">
+            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                <div class="col-lg-8 align-self-end">
+                    <h1 class="text-white font-weight-bold">Getting Started with ESP32</h1>
+                    <hr class="divider" />
+                </div>
+                <div class="col-lg-8 align-self-baseline">
+                    <p class="text-white-75 mb-5">A comprehensive guide for IoT enthusiasts</p>
+                </div>
+            </div>
+        </div>
+    </header>
 
-    <h2>Why Choose ESP32?</h2>
-    <ul>
-      <li>Dual-core processor</li>
-      <li>Built-in Wi-Fi and Bluetooth</li>
-      <li>Low power consumption</li>
-      <li>Wide community support</li>
-    </ul>
+    <!-- Post Content -->
+    <article class="mb-4 flex-grow-1">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <p class="text-muted fst-italic mb-5">Posted by JagTechno on April 2025</p>
+                    
+                    <p>The ESP32 is a powerful microcontroller with Wi-Fi and Bluetooth built in, making it ideal for IoT projects. In this guide, we’ll walk through setup, tools, and basic coding to get your first ESP32 project running.</p>
 
-    <h2>Getting Started</h2>
-    <ol>
-      <li>Install Arduino IDE or PlatformIO</li>
-      <li>Select ESP32 board (e.g., WROOM-32)</li>
-      <li>Connect and upload your first sketch</li>
-    </ol>
+                    <h2 class="section-heading mt-5">Why Choose ESP32?</h2>
+                    <ul>
+                      <li><strong>Dual-core processor:</strong> High performance for complex tasks.</li>
+                      <li><strong>Built-in Wi-Fi and Bluetooth:</strong> Ready for IoT connectivity out of the box.</li>
+                      <li><strong>Low power consumption:</strong> Essential for battery-operated devices.</li>
+                      <li><strong>Wide community support:</strong> Extensive libraries and tutorials available.</li>
+                    </ul>
 
-    <h2>Conclusion</h2>
-    <p>The ESP32 opens up endless possibilities for IoT innovation. Stay tuned for future tutorials and use cases!</p>
-  </article>
+                    <h2 class="section-heading mt-5">Getting Started</h2>
+                    <ol>
+                      <li><strong>Install Arduino IDE or PlatformIO:</strong> Choose your preferred development environment.</li>
+                      <li><strong>Select ESP32 board:</strong> Configure the IDE for your specific board (e.g., ESP32 Dev Module).</li>
+                      <li><strong>Connect and upload:</strong> Write a simple "Blink" sketch and upload it to verify the connection.</li>
+                    </ol>
 
-  <footer>
-    <p><a href="/JagTechno">← Back to Home</a></p>
-  </footer>
+                    <h2 class="section-heading mt-5">Conclusion</h2>
+                    <p>The ESP32 opens up endless possibilities for IoT innovation. Stay tuned for future tutorials and use cases!</p>
+                    
+                    <div class="mt-5">
+                        <a class="btn btn-primary" href="../index.html">← Back to Home</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <!-- Footer -->
+    <footer class="bg-light py-5 mt-auto">
+        <div class="container px-4 px-lg-5">
+            <div class="small text-center text-muted">Copyright &copy; 2024 - JagTechno</div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="../script.js"></script>
 </body>
 </html>
