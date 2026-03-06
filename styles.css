@@ -412,16 +412,3 @@ footer ul li {
 .text-white-75 {
     color: rgba(255, 255, 255, 0.75) !important;
 }
-
-/* AOS fallback: ensure content is visible if AOS fails to animate */
-[data-aos] {
-    transition-property: opacity, transform !important;
-}
-
-@media (prefers-reduced-motion: reduce) {
-    [data-aos] {
-        opacity: 1 !important;
-        transform: none !important;
-        transition: none !important;
-    }
-}
