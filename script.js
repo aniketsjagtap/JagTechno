@@ -58,12 +58,20 @@ window.addEventListener('DOMContentLoaded', event => {
     });
 
     // Initialize AOS
-    AOS.init({
-        duration: 1000,
-        easing: 'ease-in-out',
-        once: true,
-        mirror: false
-    });
+    if (typeof AOS !== 'undefined') {
+        AOS.init({
+            duration: 1000,
+            easing: 'ease-in-out',
+            once: true,
+            mirror: false
+        });
+    } else {
+        // Fallback: If AOS fails to load, make sure content is visible
+        console.warn('AOS library not loaded. Falling back to default visibility.');
+        document.querySelectorAll('[data-aos]').forEach(el => {
+            el.removeAttribute('data-aos');
+        });
+    }
 
     // Form validation and handling
     const contactForm = document.getElementById('contactForm');
