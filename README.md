@@ -25,7 +25,7 @@ JagTechno/
 ├── script.js           # Frontend logic and interactivity
 ├── submit_form.php     # PHP script for handling contact form submissions
 ├── blog/               # Blog section
-│   └── esp32-getting-started.html
+│   └── mcu-getting-started.html
 ├── README.md           # Project documentation
 └── ...
 ```

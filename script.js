@@ -128,15 +128,15 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         edge: {
             title: "Edge Computing Layer",
-            desc: "Dual-MCU architecture (ESP32 + STM32) performing local logic, data filtering, and secure MQTTS orchestration."
+            desc: "Dual-MCU architecture performing local logic, data filtering, and secure telemetry orchestration."
         },
-        mqtt: {
-            title: "Telemetry Layer (MQTT)",
+        telemetry: {
+            title: "Telemetry Layer (Secure)",
             desc: "Lightweight Pub/Sub messaging with TLS encryption. Ensures low-bandwidth, high-reliability data transit."
         },
         cloud: {
             title: "Intelligence Layer (Cloud)",
-            desc: "Node.js microservices and MariaDB storage. AI models perform predictive analytics and trend visualization."
+            desc: "Node.js microservices and Database storage. AI models perform predictive analytics and trend visualization."
         },
         solution: {
             title: "Visualization & Solution Layer",
