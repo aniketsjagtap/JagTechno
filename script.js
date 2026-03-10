@@ -197,6 +197,47 @@ document.addEventListener('DOMContentLoaded', () => {
 
     setInterval(updateOEE, 3000); // Update every 3 seconds
 
+    // --- CONTACT FORM HANDLING ---
+    const contactForm = document.getElementById('contactForm');
+    const feedbackDiv = document.getElementById('formFeedback');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', function (event) {
+            event.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+
+            // --- CONFIGURATION: SET YOUR WHATSAPP NUMBER HERE ---
+            // Format: Country Code + Number (No + or spaces)
+            const phoneNumber = "918149643432"; 
+
+            // Construct the WhatsApp message with professional formatting
+            const waMessage = encodeURIComponent(
+                `*New Inquiry from JagTechno Website*\n\n` +
+                `*Name:* ${name}\n` +
+                `*Email:* ${email}\n` +
+                `*Module:* ${subject}\n\n` +
+                `*Message:*\n${message}`
+            );
+
+            // Open WhatsApp in a new tab
+            const waUrl = `https://wa.me/${phoneNumber}?text=${waMessage}`;
+            window.open(waUrl, '_blank');
+
+            // Provide feedback
+            feedbackDiv.innerHTML = `<div class="alert alert-info mt-3"><i class="fab fa-whatsapp me-2"></i>Redirecting to WhatsApp... Please click "Send" in the app.</div>`;
+            
+            // Optional: reset form after a delay
+            setTimeout(() => {
+                contactForm.reset();
+                feedbackDiv.innerHTML = '';
+            }, 5000);
+        });
+    }
+
     // Smooth Scroll for Nav Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
