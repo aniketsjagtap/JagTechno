@@ -75,7 +75,7 @@
     <canvas id="heroCanvas" aria-hidden="true"></canvas>
 
     <!-- Header / Navigation -->
-    <nav class="navbar navbar-expand-lg sticky-top" aria-label="Main Navigation">
+    <nav class="navbar navbar-expand-lg sticky-top navbar-dark" aria-label="Main Navigation">
         <div class="container-fluid px-lg-5">
             <a class="navbar-brand d-flex align-items-center" href="/">
                 <img src="JagTechno_Logo.svg" alt="JagTechno Logo" height="50" width="50" class="me-2" loading="eager">
@@ -85,11 +85,11 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <div class="d-none d-lg-flex ms-4 gap-4 nav-dashboard-links">
-                    <a href="#overview" class="active">Overview</a>
-                    <a href="#hardware">Edge Devices</a>
-                    <a href="#architecture">Architecture</a>
-                    <a href="#solutions">Solutions</a>
+                <div class="navbar-nav ms-lg-4 gap-2 gap-lg-4 nav-dashboard-links">
+                    <a href="#overview" class="nav-link active">Overview</a>
+                    <a href="#architecture" class="nav-link">Architecture</a>
+                    <a href="#solutions" class="nav-link">Solutions</a>
+		    <a href="#hardware" class="nav-link">Edge Devices</a>
                 </div>
                 <div class="ms-auto d-flex align-items-center gap-3">
                     <div class="status-badge d-none d-md-flex align-items-center" role="status">
@@ -111,7 +111,7 @@
                         <div class="badge bg-accent-soft text-accent mb-3 border border-accent-soft px-3 py-2">v2.4: DUAL-MCU & SECURE TELEMETRY STACK</div>
                         <h1 class="display-4 mb-4">Industrial Intelligence <br><span class="text-gradient">at the Edge.</span></h1>
                         <p class="lead text-secondary-light mb-5">
-                            Enterprise SaaS platform for Smart Factories. Orchestrate advanced hardware, monitor secure telemetry, and deploy AI-driven predictive maintenance.
+                            Enterprise technology stack for Smart Factories & Agriculture. Orchestrate advanced hardware, monitor secure telemetry, and deploy AI-driven predictive maintenance.
                         </p>
                         <div class="d-flex flex-wrap gap-3">
                             <a href="https://jt-iot.jagtechno.org" target="_blank" rel="noopener" class="btn btn-accent btn-lg shadow-accent">Launch Platform</a>
@@ -248,39 +248,61 @@
             </div>
         </section>
 
-        <!-- Devices & Hardware -->
-        <section id="hardware" class="py-100">
+        <!-- Solutions Layer -->
+        <section id="solutions" class="py-100">
+            <div class="container text-center mb-5">
+                <h6 class="text-accent fw-bold text-uppercase tracking-widest">Enterprise Ecosystem</h6>
+                <h2 class="display-5 fw-bold mb-4">Industrial Intelligence Solutions</h2>
+                <p class="text-secondary">Comprehensive digital platforms for Smart Factories, Agriculture, and Predictive Maintenance.</p>
+            </div>
             <div class="container">
-                <div class="row g-4">
-                    <div class="col-lg-4">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <article class="device-card glass-card p-4 p-md-5 border-accent rounded-4">
+                           <!-- <header class="d-flex justify-content-between mb-4">
+                                <span class="badge bg-accent text-white">CASE STUDY: NEXSEL</span>
+                                <i class="fas fa-leaf text-accent fa-2x" aria-hidden="true"></i>
+			   </header>-->
+                            <h3 class="h4 fw-bold">Advanced Horticulture & AI</h3>
+                            <p class="text-secondary">Featured solution for <strong>Nexsel</strong>: A leading provider of Indoor Vertical Farming Lighting. We delivered the complete electronics architecture, IoT connectivity, and AI software stack to optimize growth recipes and energy efficiency.</p>
+                            <ul class="text-secondary small mb-4">
+                                <li><i class="fas fa-check text-accent me-2"></i> Custom Electronics for Precision Control</li>
+                                <li><i class="fas fa-check text-accent me-2"></i> Integrated IoT & Secure Telemetry</li>
+                                <li><i class="fas fa-check text-accent me-2"></i> AI-Driven Analytics for Smart Factories & Agriculture</li>
+                            </ul>
+                            <a href="https://nexsel.jagtechno.org" target="_blank" rel="noopener" class="btn btn-accent px-5 py-3 text-white-bold">Explore <i class="fas fa-external-link-alt ms-2"></i></a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Devices & Hardware -->
+        <section id="hardware" class="py-100 bg-dark-alt">
+            <div class="container text-center mb-5">
+                <h6 class="text-accent fw-bold text-uppercase tracking-widest">Custom Electronics</h6>
+                <h2 class="display-5 fw-bold mb-4">Edge Hardware</h2>
+            </div>
+            <div class="container">
+                <div class="row g-4 justify-content-center">
+                    <div class="col-lg-5">
                         <article class="device-card glass-card p-4 h-100">
                             <header class="d-flex justify-content-between mb-4">
-                                <span class="badge bg-success-soft">ACTIVE</span>
+                                <span class="badge bg-success-soft">PRODUCTION</span>
                                 <i class="fas fa-microchip text-accent" aria-hidden="true"></i>
                             </header>
-                            <h3 class="h5 fw-bold">JT Edge Gateway v4</h3>
-                            <p class="text-secondary small">Advanced MCU Core | RS485 Isolation | LoRa Telemetry.</p>
+                            <h3 class="h5 fw-bold">Smart Controllers</h3>
+                            <p class="text-secondary small">Custom-engineered electronics for precise control and climate orchestration in vertical farms. High-reliability hardware for 24/7 operations.</p>
                         </article>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-5">
                         <article class="device-card glass-card p-4 h-100">
                             <header class="d-flex justify-content-between mb-4">
-                                <span class="badge bg-warning-soft">STANDBY</span>
-                                <i class="fas fa-server text-highlight" aria-hidden="true"></i>
+                                <span class="badge bg-warning-soft">ADVANCED</span>
+                                <i class="fas fa-wifi text-highlight" aria-hidden="true"></i>
                             </header>
-                            <h3 class="h5 fw-bold">Industrial Controller</h3>
-                            <p class="text-secondary small">High-Performance Controller | Multi-sensor Logic | Rail-mount.</p>
-                        </article>
-                    </div>
-                    <div class="col-lg-4">
-                        <article class="device-card glass-card p-4 h-100 border-accent">
-                            <header class="d-flex justify-content-between mb-4">
-                                <span class="badge bg-accent text-white">PORTAL</span>
-                                <i class="fas fa-layer-group text-accent" aria-hidden="true"></i>
-                            </header>
-                            <h3 class="h5 fw-bold">Nexsel Smart Portal</h3>
-                            <p class="text-secondary small">Enterprise SaaS dashboard for AI-driven maintenance.</p>
-                            <a href="https://nexsel.jagtechno.org" target="_blank" rel="noopener" class="btn btn-sm btn-accent mt-3 w-100 text-white-bold">Launch Portal</a>
+                            <h3 class="h5 fw-bold">Advance IoT Gateways</h3>
+                            <p class="text-secondary small">Seamlessly connect thousands of IoT nodes to the AI engine. Secure telemetry for real-time monitoring of Industrial parameters.</p>
                         </article>
                     </div>
                 </div>
@@ -288,8 +310,11 @@
         </section>
 
         <!-- Contact Section -->
-        <section id="contact" class="py-100 bg-dark-alt">
-            <div class="container">
+        <section id="contact" class="py-100 position-relative overflow-hidden">
+            <!-- Dedicated Particle Background for Contact Section -->
+            <canvas id="contactCanvas" class="position-absolute top-0 start-0 w-100 h-100" style="pointer-events: none; opacity: 0.5;"></canvas>
+            
+            <div class="container position-relative z-1">
                 <div class="row g-5">
                     <div class="col-lg-5">
                         <h2 class="fw-bold mb-4">Enterprise <br><span class="text-accent">Contact Center</span></h2>

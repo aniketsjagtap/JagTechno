@@ -1,21 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
     // --- AI NEURAL NETWORK ENGINE ---
-    const canvas = document.getElementById('heroCanvas');
-    if (canvas) {
+    const initParticles = (canvasId, particleDensity = 9000) => {
+        const canvas = document.getElementById(canvasId);
+        if (!canvas) return;
+        
         const ctx = canvas.getContext('2d');
         let particles = [];
         let mouse = { x: null, y: null, radius: 150 };
 
         const resize = () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
+            canvas.width = canvas.offsetWidth;
+            canvas.height = canvas.offsetHeight;
         };
 
         window.addEventListener('resize', resize);
-        window.addEventListener('mousemove', (e) => {
-            mouse.x = e.x;
-            mouse.y = e.y;
-        });
+        
+        // Only track mouse for the global hero canvas to save performance
+        if (canvasId === 'heroCanvas') {
+            window.addEventListener('mousemove', (e) => {
+                mouse.x = e.x;
+                mouse.y = e.y;
+            });
+        }
 
         resize();
 
@@ -23,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
             constructor() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.size = Math.random() * 2 + 0.5;
+                this.size = Math.random() * 1.5 + 0.5;
                 this.baseX = this.x;
                 this.baseY = this.y;
                 this.density = (Math.random() * 30) + 1;
@@ -32,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             draw() {
-                ctx.fillStyle = 'rgba(0, 174, 239, 0.5)';
+                ctx.fillStyle = 'rgba(0, 174, 239, 0.4)';
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
                 ctx.closePath();
@@ -40,35 +46,34 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             update() {
-                // Movement
                 this.x += this.speedX;
                 this.y += this.speedY;
 
-                // Screen Wrap
                 if (this.x > canvas.width) this.x = 0;
                 else if (this.x < 0) this.x = canvas.width;
                 if (this.y > canvas.height) this.y = 0;
                 else if (this.y < 0) this.y = canvas.height;
 
-                // Mouse Interaction (AI Reactivity)
-                let dx = mouse.x - this.x;
-                let dy = mouse.y - this.y;
-                let distance = Math.sqrt(dx * dx + dy * dy);
-                if (distance < mouse.radius) {
-                    const forceDirectionX = dx / distance;
-                    const forceDirectionY = dy / distance;
-                    const force = (mouse.radius - distance) / mouse.radius;
-                    const directionX = forceDirectionX * force * this.density;
-                    const directionY = forceDirectionY * force * this.density;
-                    this.x -= directionX;
-                    this.y -= directionY;
+                if (mouse.x && mouse.y) {
+                    let dx = mouse.x - this.x;
+                    let dy = mouse.y - this.y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+                    if (distance < mouse.radius) {
+                        const forceDirectionX = dx / distance;
+                        const forceDirectionY = dy / distance;
+                        const force = (mouse.radius - distance) / mouse.radius;
+                        const directionX = forceDirectionX * force * this.density;
+                        const directionY = forceDirectionY * force * this.density;
+                        this.x -= directionX;
+                        this.y -= directionY;
+                    }
                 }
             }
         }
 
         function init() {
             particles = [];
-            let numberOfParticles = (canvas.width * canvas.height) / 9000;
+            let numberOfParticles = (canvas.width * canvas.height) / particleDensity;
             for (let i = 0; i < numberOfParticles; i++) {
                 particles.push(new Particle());
             }
@@ -82,22 +87,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     let dy = particles[a].y - particles[b].y;
                     let distance = Math.sqrt(dx * dx + dy * dy);
 
-                    if (distance < 150) {
-                        opacityValue = 1 - (distance / 150);
-                        ctx.strokeStyle = `rgba(0, 174, 239, ${opacityValue * 0.2})`;
+                    if (distance < 120) {
+                        opacityValue = 1 - (distance / 120);
+                        ctx.strokeStyle = `rgba(0, 174, 239, ${opacityValue * 0.15})`;
                         ctx.lineWidth = 0.5;
                         ctx.beginPath();
                         ctx.moveTo(particles[a].x, particles[a].y);
                         ctx.lineTo(particles[b].x, particles[b].y);
                         ctx.stroke();
-
-                        // Simulating "Data Packets" on paths
-                        if (Math.random() > 0.997) {
-                            ctx.fillStyle = `rgba(245, 158, 11, ${opacityValue})`;
-                            ctx.beginPath();
-                            ctx.arc(particles[a].x + (dx * 0.5), particles[a].y + (dy * 0.5), 1.5, 0, Math.PI * 2);
-                            ctx.fill();
-                        }
                     }
                 }
             }
@@ -115,7 +112,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         init();
         animate();
-    }
+    };
+
+    // Initialize Global Background
+    initParticles('heroCanvas');
+    
+    // Initialize Local Section Backgrounds
+    initParticles('contactCanvas', 12000); // Higher number = lower density for local sections
 
     // --- ARCHITECTURE SVG INTERACTION ---
     const nodes = document.querySelectorAll('.arch-node');
@@ -124,23 +127,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const nodeDetails = {
         sensors: {
             title: "Physical Layer (Sensors & PLC)",
-            desc: "Industrial sensors and PLCs communicating via Modbus RTU / RS485. Data is collected at microsecond intervals."
+            desc: "Industrial sensors and PLCs (Field Devices) communicating via industry-standard protocols. Data is collected at microsecond intervals."
         },
         edge: {
-            title: "Edge Computing Layer",
-            desc: "Dual-MCU architecture performing local logic, data filtering, and secure telemetry orchestration."
+            title: "Edge Computing (Advanced Controllers)",
+            desc: "High-performance Dual-Core architecture performing local logic, data filtering, and secure telemetry orchestration."
         },
         telemetry: {
             title: "Telemetry Layer (Secure)",
-            desc: "Lightweight Pub/Sub messaging with TLS encryption. Ensures low-bandwidth, high-reliability data transit."
+            desc: "Lightweight messaging with enterprise-grade encryption. Ensures low-bandwidth, high-reliability data transit using cutting-edge protocols."
         },
         cloud: {
-            title: "Intelligence Layer (Cloud)",
-            desc: "Node.js microservices and Database storage. AI models perform predictive analytics and trend visualization."
+            title: "Intelligence Layer (Backend & Database)",
+            desc: "Cloud-native microservices and scalable industrial database storage. AI models perform predictive analytics and trend mapping."
         },
         solution: {
-            title: "Visualization & Solution Layer",
-            desc: "Custom Angular dashboards and Grafana analytics providing real-time insights and operational control for smart factories."
+            title: "Visualization Layer (User Interface)",
+            desc: "Custom modern dashboards and advanced analytics providing real-time insights and operational control for smart factories."
         }
     };
 
