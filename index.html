@@ -1,458 +1,363 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google Tag Manager -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-03NF25E06E"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-03NF25E06E');
-    </script>
-    <!-- End Google Tag Manager -->
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JagTechno | Trusted IIoT, PLC Automation & Industrial SCADA Solutions</title>
-    <meta name="description" content="JagTechno is a leading provider of IIoT solutions, PLC automation, SCADA systems, and custom industrial software. Trusted partner for Industry 4.0 digital transformation.">
-    <meta name="keywords" content="Industrial IoT, IIoT, PLC Automation, SCADA Systems, Smart Manufacturing, Industrial Software, Business Automation, Trusted IoT Solutions, Industry 4.0, Smart Irrigation, JagTechno, OEE Monitoring, Cloud Automation">
-    <meta name="author" content="JagTechno">
+    <title>JagTechno | Industrial IoT, Edge Computing & Smart Factory Solutions</title>
+    
+    <!-- PRIMARY SEO -->
+    <meta name="description" content="JagTechno delivers high-end Industrial IoT, Edge Computing (ESP32/STM32), and AI-driven Predictive Maintenance for smart manufacturing. Secure MQTTS & TLS telemetry.">
+    <meta name="keywords" content="Industrial IoT, Edge Computing, ESP32 Industrial, STM32 Automation, Smart Manufacturing India, MQTT Telemetry, Predictive Maintenance SaaS, RS485 Modbus IoT">
+    <link rel="canonical" href="https://jagtechno.org/">
     <meta name="robots" content="index, follow">
 
-    <!-- Open Graph Tags -->
-    <meta property="og:title" content="JagTechno | Intelligent Automation for Industry & Agriculture">
-    <meta property="og:description" content="Expert IIoT, SCADA, and PLC automation solutions. Elevate your business efficiency with JagTechno's trusted industrial software.">
+    <!-- SOCIAL / OPEN GRAPH -->
+    <meta property="og:title" content="JagTechno | Industrial IoT & Edge Automation Platform">
+    <meta property="og:description" content="Enterprise-grade Industrial IoT solutions powered by ESP32 and STM32. Deploy secure MQTT telemetry and AI analytics.">
+    <meta property="og:url" content="https://jagtechno.org/">
+    <meta property="og:site_name" content="JagTechno">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.jagtechno.org">
-    <meta property="og:image" content="https://www.jagtechno.org/logo.png">
+    <meta property="og:image" content="JagTechno_Logo.svg">
 
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico">
+    <!-- TWITTER CARD -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JagTechno | Industrial IoT Solutions">
+    <meta name="twitter:description" content="Real-time edge monitoring and predictive maintenance for modern factories.">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-    <!-- CSS Libraries -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-
-    <!-- Custom CSS -->
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- Schema Markup -->
+    <!-- JSON-LD STRUCTURED DATA (SEO BOOST) -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Organization",
       "name": "JagTechno",
-      "url": "https://www.jagtechno.org",
-      "logo": "https://www.jagtechno.org/logo.svg",
-      "alternateName": "JagTechno Automation & Software",
-      "description": "JagTechno delivers world-class IIoT, PLC automation, and SCADA systems for modern industrial business.",
+      "url": "https://jagtechno.org",
+      "logo": "https://jagtechno.org/JagTechno_Logo.svg",
+      "description": "Industrial IoT & Edge Computing Solutions provider specializing in ESP32 and STM32 hardware and secure telemetry platforms.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Pune",
+        "addressRegion": "Maharashtra",
+        "addressCountry": "IN"
+      },
       "contactPoint": {
         "@type": "ContactPoint",
         "email": "dev.jagtechno@gmail.com",
-        "contactType": "customer service"
-      },
-      "sameAs": [
-        "https://www.linkedin.com/company/jagtechno",
-        "https://github.com/aniketsjagtap/JagTechno"
-      ]
-    }
-    </script>
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "provider": {
-        "@type": "Organization",
-        "name": "JagTechno"
-      },
-      "serviceType": "Industrial IoT & Automation",
-      "areaServed": "Global",
-      "hasOfferCatalog": {
-        "@type": "OfferCatalog",
-        "name": "Industrial Solutions",
-        "itemListElement": [
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "IIoT Implementation"
-            }
-          },
-          {
-            "@type": "Offer",
-            "itemOffered": {
-              "@type": "Service",
-              "name": "SCADA & PLC Programming"
-            }
-          }
-        ]
+        "contactType": "Technical Support"
       }
     }
     </script>
-</head>
-<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-offset="70">
-    <!-- Background Particles -->
-    <div id="particles-js"></div>
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand d-flex align-items-center" href="#page-top">
-                <img src="JagTechno_Logo.svg" alt="JagTechno Logo" height="50" class="me-1">Jag Techno
+    <!-- CRITICAL PERFORMANCE HINTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" as="style" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    
+    <!-- GOOGLE FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    
+    <!-- STYLESHEETS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- CRITICAL INLINE CSS (FASTEST PAINT) -->
+    <style>
+        :root { --dark-dashboard: #05111d; --accent: #00AEEF; }
+        body { background-color: var(--dark-dashboard); margin: 0; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        #heroCanvas { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; pointer-events: none; opacity: 0.6; }
+        .navbar { background: rgba(5, 17, 29, 0.85); backdrop-filter: blur(12px); border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .text-gradient { background: linear-gradient(90deg, #fff 0%, var(--accent) 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .display-4 { font-weight: 700; letter-spacing: -0.03em; }
+    </style>
+</head>
+<body class="bg-dashboard text-light">
+    <!-- AI Neural Network Background -->
+    <canvas id="heroCanvas" aria-hidden="true"></canvas>
+
+    <!-- Header / Navigation -->
+    <nav class="navbar navbar-expand-lg sticky-top" aria-label="Main Navigation">
+        <div class="container-fluid px-lg-5">
+            <a class="navbar-brand d-flex align-items-center" href="/">
+                <img src="JagTechno_Logo.svg" alt="JagTechno Logo" height="50" width="50" class="me-2" loading="eager">
+                <span class="fw-bold fs-3 text-white">JAG<span class="text-accent">TECHNO</span></span>
             </a>
-            <div class="d-flex align-items-center order-lg-last">
-                <button class="navbar-toggler ms-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fas fa-bars"></i>
-                </button>
-            </div>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link px-lg-3" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3" href="#services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3" href="#iiot-live">Live Demo</a></li>
-                    <li class="nav-item"><a class="nav-link px-lg-3" href="#portfolio">Case Studies</a></li>
-                    <li class="nav-item"><a class="nav-link btn-contact ms-lg-3" href="#contact">Contact Us</a></li>
-                </ul>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle Navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="d-none d-lg-flex ms-4 gap-4 nav-dashboard-links">
+                    <a href="#overview" class="active">Overview</a>
+                    <a href="#hardware">Edge Devices</a>
+                    <a href="#architecture">Architecture</a>
+                    <a href="#solutions">Solutions</a>
+                </div>
+                <div class="ms-auto d-flex align-items-center gap-3">
+                    <div class="status-badge d-none d-md-flex align-items-center" role="status">
+                        <span class="status-dot pulse-green" aria-hidden="true"></span>
+                        <span class="small fw-medium opacity-75">SYSTEMS ONLINE</span>
+                    </div>
+                    <a href="#contact" class="btn btn-accent btn-sm px-4">Request Demo</a>
+                </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Header -->
-    <header class="masthead" id="page-top">
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 align-items-center">
-                <div class="col-lg-7 text-start" data-aos="fade-right">
-                    <div class="badge bg-primary-soft text-primary mb-3 py-2 px-3 rounded-pill fw-bold">
-                        <i class="fas fa-bolt me-2"></i> Industry 4.0 Ready
-                    </div>
-                    <h1 class="display-2 fw-800 text-white mb-4">Digitizing the <span class="text-gradient">Industrial</span> Frontier</h1>
-                    <p class="text-white-75 mb-5 lead">Bridging the gap between OT and IT. We deliver high-performance IIoT systems, robust PLC automation, and custom cloud analytics that drive operational excellence.</p>
-                    <div class="d-flex flex-wrap gap-3">
-                        <a class="btn btn-primary btn-xl rounded-pill" href="#services">
-                            View Solutions <i class="fas fa-arrow-right ms-2"></i>
-                        </a>
-                        <a class="btn btn-outline-light btn-xl rounded-pill" href="#iiot-live">
-                            <i class="fas fa-play-circle me-2"></i> Watch Demo
-                        </a>
-                    </div>
-                </div>
-                <div class="col-lg-5 mt-5 mt-lg-0" data-aos="zoom-in" data-aos-delay="200">
-                    <!-- Interactive Dashboard Card Preview -->
-                    <div class="glass-card hero-dashboard p-4">
-                        <div class="d-flex justify-content-between align-items-center mb-4">
-                            <h6 class="mb-0 text-white"><i class="fas fa-chart-line me-2 text-primary"></i> Real-time Monitoring</h6>
-                            <span class="status-dot pulse"></span>
-                        </div>
-                        <canvas id="heroChart" height="200"></canvas>
-                        <div class="row g-2 mt-3">
-                            <div class="col-6">
-                                <div class="stat-mini p-2 rounded">
-                                    <small class="d-block text-white-50">OEE Rate</small>
-                                    <span class="fw-bold text-success">87.4%</span>
-                                </div>
-                            </div>
-                            <div class="col-6">
-                                <div class="stat-mini p-2 rounded">
-                                    <small class="d-block text-white-50">Active Nodes</small>
-                                    <span class="fw-bold text-primary">124</span>
-                                </div>
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section id="overview" class="py-5 bg-grid-subtle">
+            <div class="container-fluid px-lg-5">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-5">
+                        <div class="badge bg-accent-soft text-accent mb-3 border border-accent-soft px-3 py-2">v2.4: DUAL-MCU & SECURE MQTTS STACK</div>
+                        <h1 class="display-4 mb-4">Industrial Intelligence <br><span class="text-gradient">at the Edge.</span></h1>
+                        <p class="lead text-secondary-light mb-5">
+                            Enterprise SaaS platform for Smart Factories. Orchestrate ESP32 & STM32 hardware, monitor secure MQTT telemetry, and deploy AI-driven predictive maintenance.
+                        </p>
+                        <div class="d-flex flex-wrap gap-3">
+                            <a href="https://jt-iot.jagtechno.org" target="_blank" rel="noopener" class="btn btn-accent btn-lg shadow-accent">Launch Platform</a>
+                            <div class="vr mx-2 opacity-25 d-none d-sm-block"></div>
+                            <div class="d-flex align-items-center">
+                                <span class="status-dot pulse-blue me-2"></span>
+                                <span class="small fw-bold">1,240+ Active Nodes</span>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <a class="scroll-down" href="#about"><i class="fas fa-chevron-down"></i></a>
-    </header>
-
-    <!-- Services Section (Modernized) -->
-    <section class="page-section" id="services">
-        <div class="container px-4 px-lg-5">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="display-4 fw-bold">Enterprise Solutions</h2>
-                <p class="lead text-muted">Empowering your business with scalable, data-driven automation.</p>
-                <div class="divider-modern mx-auto"></div>
-            </div>
-            <div class="row gx-4 gy-4">
-                <!-- Service 1 -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="service-card glass-card h-100 p-4">
-                        <div class="icon-box mb-4"><i class="fas fa-network-wired"></i></div>
-                        <h3 class="h4 mb-3">Industrial IoT (IIoT)</h3>
-                        <p class="text-muted">Edge computing, MQTT gateways, and secure connectivity for real-time asset visibility and factory-wide integration.</p>
-                        <ul class="list-unstyled small text-muted mt-3">
-                            <li><i class="fas fa-check text-primary me-2"></i> Remote Asset Tracking</li>
-                            <li><i class="fas fa-check text-primary me-2"></i> Condition Monitoring</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Service 2 -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="service-card glass-card h-100 p-4 active">
-                        <div class="icon-box mb-4"><i class="fas fa-robot"></i></div>
-                        <h3 class="h4 mb-3">PLC & SCADA</h3>
-                        <p class="text-muted">High-precision programming for Siemens, Allen Bradley, and Delta. Advanced SCADA/HMI for total process control.</p>
-                        <ul class="list-unstyled small text-muted mt-3">
-                            <li><i class="fas fa-check text-primary me-2"></i> Process Automation</li>
-                            <li><i class="fas fa-check text-primary me-2"></i> Safety PLC Integration</li>
-                        </ul>
-                    </div>
-                </div>
-                <!-- Service 3 -->
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="service-card glass-card h-100 p-4">
-                        <div class="icon-box mb-4"><i class="fas fa-cloud-upload-alt"></i></div>
-                        <h3 class="h4 mb-3">Cloud Analytics</h3>
-                        <p class="text-muted">Transform raw data into actionable insights with OEE dashboards, predictive maintenance, and cloud integration.</p>
-                        <ul class="list-unstyled small text-muted mt-3">
-                            <li><i class="fas fa-check text-primary me-2"></i> Predictive AI Models</li>
-                            <li><i class="fas fa-check text-primary me-2"></i> AWS/Azure/Private Cloud</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Live Demo Section (New Interactivity) -->
-    <section class="page-section bg-dark text-white overflow-hidden" id="iiot-live">
-        <div class="container px-4 px-lg-5">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-5 mb-lg-0" data-aos="fade-right">
-                    <h2 class="display-5 fw-bold mb-4">Experience the <span class="text-gradient">Live</span> Dashboard</h2>
-                    <p class="lead text-white-75 mb-4">Our systems provide instantaneous feedback from the factory floor to the boardroom. Monitor OEE, power consumption, and machine health in real-time.</p>
-                    <div class="features-list">
-                        <div class="d-flex mb-3">
-                            <div class="feature-icon me-3"><i class="fas fa-bolt text-warning"></i></div>
-                            <div>
-                                <h5 class="mb-1">Low Latency</h5>
-                                <p class="small text-white-50">Sub-second data refresh rates for critical operations.</p>
-                            </div>
-                        </div>
-                        <div class="d-flex mb-3">
-                            <div class="feature-icon me-3"><i class="fas fa-shield-alt text-success"></i></div>
-                            <div>
-                                <h5 class="mb-1">Secure by Design</h5>
-                                <p class="small text-white-50">End-to-end encryption and VPN-based remote access.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="live-dashboard-frame p-3 glass-card">
-                        <div class="dashboard-header d-flex justify-content-between align-items-center mb-3">
-                            <span class="badge bg-success"><i class="fas fa-circle-notch fa-spin me-2"></i> LIVE STREAMING</span>
-                            <small class="font-monospace">Node: IND-KRD-01</small>
-                        </div>
-                        <div class="row g-3">
-                            <div class="col-md-8">
-                                <div class="chart-container p-2 bg-black-50 rounded">
-                                    <canvas id="liveOeeChart" height="250"></canvas>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="d-flex flex-column gap-2">
-                                    <div class="metric-card p-3 rounded bg-primary-soft">
-                                        <small class="d-block text-white-50">Temp</small>
-                                        <div class="h4 mb-0" id="live-temp">42.5°C</div>
-                                    </div>
-                                    <div class="metric-card p-3 rounded bg-success-soft">
-                                        <small class="d-block text-white-50">Pressure</small>
-                                        <div class="h4 mb-0" id="live-pressure">6.2 Bar</div>
-                                    </div>
-                                    <div class="metric-card p-3 rounded bg-warning-soft">
-                                        <small class="d-block text-white-50">Energy</small>
-                                        <div class="h4 mb-0" id="live-energy">12.4 kW</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Case Studies (Modernized) -->
-    <section class="page-section" id="portfolio">
-        <div class="container px-4 px-lg-5">
-            <div class="text-center mb-5" data-aos="fade-up">
-                <h2 class="display-4 fw-bold">Case Studies</h2>
-                <p class="lead text-muted">Proven results and live enterprise platforms.</p>
-            </div>
-            <div class="row g-4">
-                <!-- Project 1 -->
-                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="case-card">
-                        <div class="case-img-wrap">
-                            <img src="https://images.unsplash.com/photo-1558444458-3005a0957b21?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Water Management" class="img-fluid">
-                            <div class="case-overlay p-4 text-center">
-                                <h5 class="text-white">Smart Water</h5>
-                                <p class="text-white-75 small">Leakage reduction by 15%.</p>
-                                <span class="badge bg-primary">IIoT + Cloud</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Project 2 -->
-                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="case-card">
-                        <div class="case-img-wrap">
-                            <img src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Packaging Line" class="img-fluid">
-                            <div class="case-overlay p-4 text-center">
-                                <h5 class="text-white">Auto Packaging</h5>
-                                <p class="text-white-75 small">Throughput increased by 25%.</p>
-                                <span class="badge bg-success">PLC & Motion</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- JT-IoT Login -->
-                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="case-card border-primary-glow">
-                        <div class="case-img-wrap">
-                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="JT-IoT" class="img-fluid">
-                            <div class="case-overlay p-4 text-center">
-                                <h5 class="text-white">JT-IoT Portal</h5>
-                                <p class="text-white-75 small">Centralized IIoT monitoring.</p>
-                                <a href="https://jt-iot.jagtechno.org" target="_blank" class="btn btn-sm btn-outline-light rounded-pill mt-2">Login to IoT <i class="fas fa-external-link-alt ms-1"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- NEXSEL Login -->
-                <div class="col-lg-3 col-md-6" data-aos="zoom-in" data-aos-delay="400">
-                    <div class="case-card border-success-glow">
-                        <div class="case-img-wrap">
-                            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="NEXSEL ERP" class="img-fluid">
-                            <div class="case-overlay p-4 text-center">
-                                <h5 class="text-white">NEXSEL ERP</h5>
-                                <p class="text-white-75 small">Enterprise Resource Planning.</p>
-                                <a href="https://nexsel.jagtechno.org" target="_blank" class="btn btn-sm btn-outline-light rounded-pill mt-2">Login to ERP <i class="fas fa-external-link-alt ms-1"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section (Modernized) -->
-    <section class="page-section" id="contact">
-        <div class="container px-4 px-lg-5">
-            <div class="glass-card contact-wrapper p-5" data-aos="fade-up">
-                <div class="row gx-4 gx-lg-5 justify-content-center">
-                    <div class="col-lg-6 text-center mb-5">
-                        <h2 class="display-5 fw-bold">Let's Build the Future</h2>
-                        <p class="text-muted">Start your digital transformation journey with us today.</p>
-                    </div>
-                </div>
-                <div class="row gx-5">
                     <div class="col-lg-7">
-                        <form id="contactForm" action="submit_form.php" method="POST">
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="name" name="name" type="text" placeholder="Name" required />
-                                        <label for="name">Full Name</label>
+                        <article class="dashboard-preview-card glass-card p-4 rounded-4 shadow-lg border-accent-dim">
+                            <header class="d-flex justify-content-between align-items-center mb-4">
+                                <h2 class="h6 mb-0 fw-bold"><i class="fas fa-chart-line me-2 text-accent"></i>Real-time OEE Analytics</h2>
+                                <span class="badge bg-dark border border-secondary-dark px-3 py-2 fs-xxs">LIVE SCANNING</span>
+                            </header>
+                            
+                            <!-- OEE METRICS -->
+                            <div class="row g-3 mb-4">
+                                <div class="col-md-4">
+                                    <div class="stat-widget p-3 rounded-4 d-flex align-items-center">
+                                        <div class="progress-ring-container me-3">
+                                            <svg width="60" height="60" viewBox="0 0 60 60">
+                                                <circle stroke="rgba(255,255,255,0.05)" stroke-width="4" fill="transparent" r="26" cx="30" cy="30"/>
+                                                <circle id="oee-ring" stroke="#00AEEF" stroke-width="4" stroke-dasharray="163.3" stroke-dashoffset="32" fill="transparent" r="26" cx="30" cy="30" class="progress-ring-circle" />
+                                            </svg>
+                                            <div id="oee-val-primary" class="position-absolute top-50 start-50 translate-middle fs-xxs fw-bold">82%</div>
+                                        </div>
+                                        <div>
+                                            <p class="small opacity-50 mb-0 fs-xxs fw-bold">AVAILABILITY</p>
+                                            <p id="oee-val-availability" class="h5 fw-bold mb-0">98.2%</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="form-floating mb-3">
-                                        <input class="form-control" id="email" name="email" type="email" placeholder="Email" required />
-                                        <label for="email">Business Email</label>
+                                <div class="col-md-4">
+                                    <div class="stat-widget p-3 rounded-4 d-flex align-items-center border-left-highlight">
+                                        <div class="live-bar-container me-3">
+                                            <div class="live-bar" style="animation-delay: 0.1s"></div>
+                                            <div class="live-bar" style="animation-delay: 0.3s"></div>
+                                            <div class="live-bar" style="animation-delay: 0.2s"></div>
+                                        </div>
+                                        <div>
+                                            <p class="small opacity-50 mb-0 fs-xxs fw-bold">PERFORMANCE</p>
+                                            <p id="oee-val-performance" class="h5 fw-bold mb-0">94.5%</p>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-12">
-                                    <div class="form-floating mb-3">
-                                        <textarea class="form-control" id="message" name="message" placeholder="Message" style="height: 12rem" required></textarea>
-                                        <label for="message">Project Details</label>
+                                <div class="col-md-4">
+                                    <div class="stat-widget p-3 rounded-4 border-left-success">
+                                        <p class="small opacity-50 mb-0 fs-xxs fw-bold">QUALITY INDEX</p>
+                                        <p id="oee-val-quality" class="h5 fw-bold mb-0">99.9%</p>
+                                        <div class="progress mt-2 bg-dark" style="height: 4px;">
+                                            <div id="oee-bar-quality" class="progress-bar bg-success" style="width: 99.9%" role="progressbar" aria-valuenow="99.9" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="col-12">
-                                    <button class="btn btn-primary btn-xl w-100 rounded-pill" id="submitButton" type="submit">
-                                        Send Message <i class="fas fa-paper-plane ms-2"></i>
-                                    </button>
-                                </div>
                             </div>
-                        </form>
-                        <div id="formFeedback" class="mt-3 text-center"></div>
-                    </div>
-                    <div class="col-lg-5 mt-5 mt-lg-0">
-                        <div class="contact-info-list h-100 d-flex flex-column justify-content-center">
-                            <div class="info-item mb-4 d-flex align-items-center">
-                                <div class="info-icon me-3"><i class="fas fa-envelope"></i></div>
-                                <div>
-                                    <small class="d-block text-white fw-bold">Email Us</small>
-                                    <a href="mailto:dev.jagtechno@gmail.com" class="fw-bold text-decoration-none text-primary fs-5">dev.jagtechno@gmail.com</a>
-                                </div>
-                            </div>
-                            <div class="info-item mb-4 d-flex align-items-center">
-                                <div class="info-icon me-3"><i class="fas fa-map-marker-alt"></i></div>
-                                <div>
-                                    <small class="d-block text-white fw-bold">Office</small>
-                                    <span class="fw-bold text-white">Karad, MH, India</span>
-                                </div>
-                            </div>
-                            <div class="social-links d-flex gap-3 mt-4">
-                                <a href="https://linkedin.com/company/jagtechno" class="social-icon"><i class="fab fa-linkedin-in text-white"></i></a>
-                                <a href="https://github.com/aniketsjagtap/JagTechno" class="social-icon"><i class="fab fa-github text-white"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Google Map Integration -->
-                <div class="row mt-5">
-                    <div class="col-12" data-aos="zoom-in">
-                        <div class="map-container rounded-4 overflow-hidden shadow-lg" style="height: 400px; border: 1px solid var(--glass-border);">
-                            <iframe 
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3229.547216235821!2d74.19131937428968!3d17.2685531062194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc1833e546db227%3A0x60286a51ec8db1c8!2sJagTechno!5e1!3m2!1sen!2sin!4v1773128761209!5m2!1sen!2sin" 
-                                width="100%" 
-                                height="100%" 
-                                style="border:0; filter: contrast(1.2) opacity(0.9);" 
-                                allowfullscreen="" 
-                                loading="lazy" 
-                                referrerpolicy="no-referrer-when-downgrade">
-                            </iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer py-5">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-4 text-lg-start">
-                    <span class="fw-bold h5"><i class="fas fa-microchip me-2 text-primary"></i>JagTechno</span>
-                    <p class="small text-muted mt-2">© 2024 JagTechno. Transforming Industrial Intelligence.</p>
-                </div>
-                <div class="col-lg-4 my-3 my-lg-0">
-                    <!-- Footer Links -->
-                </div>
-                <div class="col-lg-4 text-lg-end">
-                    <a class="text-decoration-none me-3 small text-muted" href="#!">Privacy Policy</a>
-                    <a class="text-decoration-none small text-muted" href="#!">Terms of Use</a>
+                            <!-- TELEMETRY VIEW -->
+                            <div class="telemetry-visual border border-accent-dim rounded-4 position-relative overflow-hidden" style="height: 200px;">
+                                <div class="scanning-line"></div>
+                                <div class="telemetry-grid"></div>
+                                <div class="position-absolute top-0 start-0 w-100 h-100 p-3 d-flex flex-column justify-content-between z-2">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div class="badge bg-dark border border-accent-dim text-accent fs-xxs px-3">ENCRYPTED MQTTS CHANNEL</div>
+                                        <div class="fs-xxs text-secondary">NODE: JT-4102 | 24ms</div>
+                                    </div>
+                                    <div class="text-center">
+                                        <p class="h1 mb-0 fw-bold text-accent text-shadow-glow"><span id="live-kw">84.2</span><small class="fs-6">kW</small></p>
+                                        <p class="fs-xxs text-secondary tracking-widest text-uppercase">Grid Telemetry</p>
+                                    </div>
+                                </div>
+                                <div class="telemetry-wave"></div>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </div>
+        </section>
+
+        <!-- Interactive Architecture -->
+        <section id="architecture" class="py-100 bg-dark-alt">
+            <div class="container text-center">
+                <h6 class="text-accent fw-bold text-uppercase tracking-widest">Platform Flow</h6>
+                <h2 class="display-5 fw-bold mb-4">Industrial IoT Architecture</h2>
+                <p class="text-secondary mb-5">Seamless data orchestration from Field Protocols to AI Analytics.</p>
+                
+                <div class="architecture-svg-container glass-card p-3 p-md-5 rounded-4 border-secondary-dark">
+                    <!-- SVG Architecture with Animated Particles -->
+                    <svg viewBox="0 0 1200 450" xmlns="http://www.w3.org/2000/svg" class="w-100 h-auto" role="img" aria-label="System Architecture Diagram">
+                        <!-- Paths -->
+                        <path id="p1" d="M140 225 H240" stroke="rgba(0, 174, 239, 0.2)" stroke-width="3" fill="none" />
+                        <path id="p2" d="M380 225 H480" stroke="rgba(0, 174, 239, 0.2)" stroke-width="3" fill="none" />
+                        <path id="p3" d="M620 225 H720" stroke="rgba(0, 174, 239, 0.2)" stroke-width="3" fill="none" />
+                        <path id="p4" d="M860 225 H960" stroke="rgba(0, 174, 239, 0.2)" stroke-width="3" fill="none" />
+                        
+                        <!-- Animated Particles (The Dots) -->
+                        <circle r="4" fill="#00AEEF"><animateMotion dur="3s" repeatCount="indefinite"><mpath href="#p1"/></animateMotion></circle>
+                        <circle r="4" fill="#00AEEF"><animateMotion dur="2s" repeatCount="indefinite"><mpath href="#p2"/></animateMotion></circle>
+                        <circle r="4" fill="#F59E0B"><animateMotion dur="1.5s" repeatCount="indefinite"><mpath href="#p3"/></animateMotion></circle>
+                        <circle r="4" fill="#10B981"><animateMotion dur="2.5s" repeatCount="indefinite"><mpath href="#p4"/></animateMotion></circle>
+
+                        <!-- Nodes -->
+                        <g class="arch-node" data-target="sensors" tabindex="0">
+                            <rect x="20" y="160" width="120" height="130" rx="12" fill="#05192d" stroke="#1e293b" />
+                            <text x="80" y="215" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">SENSORS</text>
+                            <text x="80" y="235" text-anchor="middle" fill="#94a3b8" font-size="11">RS485 / MODBUS</text>
+                        </g>
+                        <g class="arch-node" data-target="edge" tabindex="0">
+                            <rect x="240" y="140" width="140" height="170" rx="12" fill="#0A2540" stroke="#00AEEF" stroke-width="2" />
+                            <text x="310" y="200" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">EDGE GATEWAY</text>
+                            <text x="310" y="225" text-anchor="middle" fill="#00AEEF" font-size="12">ESP32 + STM32</text>
+                        </g>
+                        <g class="arch-node" data-target="mqtt" tabindex="0">
+                            <rect x="480" y="160" width="140" height="130" rx="12" fill="#05192d" stroke="#1e293b" />
+                            <text x="550" y="215" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">MQTT BROKER</text>
+                            <text x="550" y="235" text-anchor="middle" fill="#94a3b8" font-size="11">TLS SECURE</text>
+                        </g>
+                        <g class="arch-node" data-target="cloud" tabindex="0">
+                            <rect x="720" y="140" width="140" height="170" rx="12" fill="#0A2540" stroke="#F59E0B" stroke-width="1.5" />
+                            <text x="790" y="200" text-anchor="middle" fill="#fff" font-size="14" font-weight="bold">CLOUD CORE</text>
+                            <text x="790" y="225" text-anchor="middle" fill="#F59E0B" font-size="12">MARIADB / AI</text>
+                        </g>
+                        <g class="arch-node" data-target="solution" tabindex="0">
+                            <rect x="960" y="140" width="220" height="170" rx="12" fill="#05192d" stroke="#10B981" stroke-width="2" />
+                            <text x="1070" y="200" text-anchor="middle" fill="#fff" font-size="16" font-weight="bold">VISUALIZATION</text>
+                            <text x="1070" y="225" text-anchor="middle" fill="#10B981" font-size="12">REAL-TIME INSIGHTS</text>
+                        </g>
+                    </svg>
+                    <div id="nodeInfo" class="mt-4 p-3 bg-dark-soft rounded-3 border border-secondary-dark min-h-60" aria-live="polite">
+                        <span class="text-secondary small">Hover nodes for technical specifications.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Devices & Hardware -->
+        <section id="hardware" class="py-100">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-4">
+                        <article class="device-card glass-card p-4 h-100">
+                            <header class="d-flex justify-content-between mb-4">
+                                <span class="badge bg-success-soft">ACTIVE</span>
+                                <i class="fas fa-microchip text-accent" aria-hidden="true"></i>
+                            </header>
+                            <h3 class="h5 fw-bold">JT Edge Gateway v4</h3>
+                            <p class="text-secondary small">ESP32-S3 Core | RS485 Isolation | LoRa Telemetry.</p>
+                        </article>
+                    </div>
+                    <div class="col-lg-4">
+                        <article class="device-card glass-card p-4 h-100">
+                            <header class="d-flex justify-content-between mb-4">
+                                <span class="badge bg-warning-soft">STANDBY</span>
+                                <i class="fas fa-server text-highlight" aria-hidden="true"></i>
+                            </header>
+                            <h3 class="h5 fw-bold">Industrial Controller</h3>
+                            <p class="text-secondary small">STM32 Power | Multi-sensor Logic | Rail-mount.</p>
+                        </article>
+                    </div>
+                    <div class="col-lg-4">
+                        <article class="device-card glass-card p-4 h-100 border-accent">
+                            <header class="d-flex justify-content-between mb-4">
+                                <span class="badge bg-accent text-white">PORTAL</span>
+                                <i class="fas fa-layer-group text-accent" aria-hidden="true"></i>
+                            </header>
+                            <h3 class="h5 fw-bold">Nexsel Smart Portal</h3>
+                            <p class="text-secondary small">Enterprise SaaS dashboard for AI-driven maintenance.</p>
+                            <a href="https://nexsel.jagtechno.org" target="_blank" rel="noopener" class="btn btn-sm btn-accent mt-3 w-100 text-white-bold">Launch Portal</a>
+                        </article>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-100 bg-dark-alt">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-5">
+                        <h2 class="fw-bold mb-4">Enterprise <br><span class="text-accent">Contact Center</span></h2>
+                        <div class="contact-card glass-card p-4 rounded-4">
+                            <div class="d-flex mb-4">
+                                <i class="fas fa-envelope text-accent me-3 mt-1" aria-hidden="true"></i>
+                                <div>
+                                    <p class="small opacity-50 mb-0">TECHNICAL SUPPORT</p>
+                                    <p class="fw-bold mb-0">dev.jagtechno@gmail.com</p>
+                                </div>
+                            </div>
+                            <div class="rounded-3 overflow-hidden border border-secondary-dark" style="height: 200px;">
+                                <iframe title="JagTechno Headquarters Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3229.547216235821!2d74.19131937428968!3d17.2685531062194!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc1833e546db227%3A0x60286a51ec8db1c8!2sJagTechno!5e1!3m2!1sen!2sin!4v1773141526431!5m2!1sen!2sin" 
+                                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <form class="glass-card p-4 p-md-5 rounded-4" action="submit_form.php" method="POST">
+                            <fieldset>
+                                <legend class="h5 fw-bold mb-4">Inquiry Dashboard</legend>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="name" class="form-label fs-xxs fw-bold opacity-50">USER NAME</label>
+                                        <input type="text" id="name" name="name" required class="form-control" placeholder="John Doe">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label fs-xxs fw-bold opacity-50">CORPORATE EMAIL</label>
+                                        <input type="email" id="email" name="email" required class="form-control" placeholder="john@company.io">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="subject" class="form-label fs-xxs fw-bold opacity-50">PROJECT MODULE</label>
+                                        <select id="subject" name="subject" class="form-select">
+                                            <option>Edge Gateway Orchestration</option>
+                                            <option>AI Maintenance Engine</option>
+                                            <option>Custom STM32 Development</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label fs-xxs fw-bold opacity-50">SCOPE OVERVIEW</label>
+                                        <textarea id="message" name="message" required class="form-control" rows="4" placeholder="Brief project description..."></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-accent w-100 py-3 fw-bold mt-2 text-white">DEPLOY INQUIRY <i class="fas fa-paper-plane ms-2"></i></button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-5 bg-dark-alt border-top border-secondary-dark">
+        <div class="container text-center">
+            <div class="mb-3">
+                <img src="JagTechno_Logo.svg" alt="JagTechno Logo" height="30" width="30" class="opacity-75">
+            </div>
+            <p class="text-secondary small mb-2">&copy; 2026 JagTechno Industrial IoT Systems. India's leader in Edge-AI Reliability.</p>
+            <p class="small fw-medium tracking-wide mb-0" style="color: rgba(255,255,255,0.6);">
+                Precision Engineered. Industrial Excellence Redefined. <i class="fas fa-heart text-danger ms-1 animate-pulse"></i>
+            </p>
         </div>
     </footer>
 
-    <!-- Libraries -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.2/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
-
-    <!-- Core App JS -->
-    <script src="script.js"></script>
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

@@ -1,169 +1,210 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Initialize AOS (Animate on Scroll)
-    AOS.init({
-        duration: 1000,
-        once: true,
-        offset: 100
-    });
-    
-    window.addEventListener('load', () => {
-        AOS.refresh();
-    });
+    // --- AI NEURAL NETWORK ENGINE ---
+    const canvas = document.getElementById('heroCanvas');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        let particles = [];
+        let mouse = { x: null, y: null, radius: 150 };
 
-    // 2. Initialize Particles.js
-    if (document.getElementById('particles-js')) {
-        particlesJS('particles-js', {
-            "particles": {
-                "number": { "value": 80, "density": { "enable": true, "value_area": 800 } },
-                "color": { "value": "#007bff" },
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.2, "random": false },
-                "size": { "value": 3, "random": true },
-                "line_linked": { "enable": true, "distance": 150, "color": "#007bff", "opacity": 0.1, "width": 1 },
-                "move": { "enable": true, "speed": 2, "direction": "none", "random": false, "straight": false, "out_mode": "out", "bounce": false }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": { "onhover": { "enable": true, "mode": "grab" }, "onclick": { "enable": true, "mode": "push" }, "resize": true },
-                "modes": { "grab": { "distance": 140, "line_linked": { "opacity": 1 } }, "push": { "particles_nb": 4 } }
-            },
-            "retina_detect": true
+        const resize = () => {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        };
+
+        window.addEventListener('resize', resize);
+        window.addEventListener('mousemove', (e) => {
+            mouse.x = e.x;
+            mouse.y = e.y;
         });
-    }
 
-    // 3. Navbar Scroll Effect
-    const mainNav = document.getElementById('mainNav');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            mainNav.classList.add('navbar-scrolled');
-        } else {
-            mainNav.classList.remove('navbar-scrolled');
+        resize();
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+                this.size = Math.random() * 2 + 0.5;
+                this.baseX = this.x;
+                this.baseY = this.y;
+                this.density = (Math.random() * 30) + 1;
+                this.speedX = (Math.random() * 0.4) - 0.2;
+                this.speedY = (Math.random() * 0.4) - 0.2;
+            }
+
+            draw() {
+                ctx.fillStyle = 'rgba(0, 174, 239, 0.5)';
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.closePath();
+                ctx.fill();
+            }
+
+            update() {
+                // Movement
+                this.x += this.speedX;
+                this.y += this.speedY;
+
+                // Screen Wrap
+                if (this.x > canvas.width) this.x = 0;
+                else if (this.x < 0) this.x = canvas.width;
+                if (this.y > canvas.height) this.y = 0;
+                else if (this.y < 0) this.y = canvas.height;
+
+                // Mouse Interaction (AI Reactivity)
+                let dx = mouse.x - this.x;
+                let dy = mouse.y - this.y;
+                let distance = Math.sqrt(dx * dx + dy * dy);
+                if (distance < mouse.radius) {
+                    const forceDirectionX = dx / distance;
+                    const forceDirectionY = dy / distance;
+                    const force = (mouse.radius - distance) / mouse.radius;
+                    const directionX = forceDirectionX * force * this.density;
+                    const directionY = forceDirectionY * force * this.density;
+                    this.x -= directionX;
+                    this.y -= directionY;
+                }
+            }
         }
+
+        function init() {
+            particles = [];
+            let numberOfParticles = (canvas.width * canvas.height) / 9000;
+            for (let i = 0; i < numberOfParticles; i++) {
+                particles.push(new Particle());
+            }
+        }
+
+        function connect() {
+            let opacityValue = 1;
+            for (let a = 0; a < particles.length; a++) {
+                for (let b = a; b < particles.length; b++) {
+                    let dx = particles[a].x - particles[b].x;
+                    let dy = particles[a].y - particles[b].y;
+                    let distance = Math.sqrt(dx * dx + dy * dy);
+
+                    if (distance < 150) {
+                        opacityValue = 1 - (distance / 150);
+                        ctx.strokeStyle = `rgba(0, 174, 239, ${opacityValue * 0.2})`;
+                        ctx.lineWidth = 0.5;
+                        ctx.beginPath();
+                        ctx.moveTo(particles[a].x, particles[a].y);
+                        ctx.lineTo(particles[b].x, particles[b].y);
+                        ctx.stroke();
+
+                        // Simulating "Data Packets" on paths
+                        if (Math.random() > 0.997) {
+                            ctx.fillStyle = `rgba(245, 158, 11, ${opacityValue})`;
+                            ctx.beginPath();
+                            ctx.arc(particles[a].x + (dx * 0.5), particles[a].y + (dy * 0.5), 1.5, 0, Math.PI * 2);
+                            ctx.fill();
+                        }
+                    }
+                }
+            }
+        }
+
+        function animate() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            for (let i = 0; i < particles.length; i++) {
+                particles[i].update();
+                particles[i].draw();
+            }
+            connect();
+            requestAnimationFrame(animate);
+        }
+
+        init();
+        animate();
+    }
+
+    // --- ARCHITECTURE SVG INTERACTION ---
+    const nodes = document.querySelectorAll('.arch-node');
+    const infoPanel = document.getElementById('nodeInfo');
+
+    const nodeDetails = {
+        sensors: {
+            title: "Physical Layer (Sensors & PLC)",
+            desc: "Industrial sensors and PLCs communicating via Modbus RTU / RS485. Data is collected at microsecond intervals."
+        },
+        edge: {
+            title: "Edge Computing Layer",
+            desc: "Dual-MCU architecture (ESP32 + STM32) performing local logic, data filtering, and secure MQTTS orchestration."
+        },
+        mqtt: {
+            title: "Telemetry Layer (MQTT)",
+            desc: "Lightweight Pub/Sub messaging with TLS encryption. Ensures low-bandwidth, high-reliability data transit."
+        },
+        cloud: {
+            title: "Intelligence Layer (Cloud)",
+            desc: "Node.js microservices and MariaDB storage. AI models perform predictive analytics and trend visualization."
+        },
+        solution: {
+            title: "Visualization & Solution Layer",
+            desc: "Custom Angular dashboards and Grafana analytics providing real-time insights and operational control for smart factories."
+        }
+    };
+
+    nodes.forEach(node => {
+        node.addEventListener('mouseenter', () => {
+            const target = node.getAttribute('data-target');
+            const data = nodeDetails[target];
+            if (data) {
+                infoPanel.innerHTML = `
+                    <h6 class="text-accent fw-bold mb-1">${data.title}</h6>
+                    <p class="small text-secondary mb-0">${data.desc}</p>
+                `;
+                infoPanel.classList.add('border-accent');
+            }
+        });
+
+        node.addEventListener('mouseleave', () => {
+            infoPanel.innerHTML = '<span class="text-secondary small">Hover over a system node to view technical specifications.</span>';
+            infoPanel.classList.remove('border-accent');
+        });
     });
 
-    // 5. Charts (Hero & Live Dashboard)
-    const ctxHero = document.getElementById('heroChart');
-    if (ctxHero) {
-        new Chart(ctxHero, {
-            type: 'line',
-            data: {
-                labels: ['00:00', '04:00', '08:00', '12:00', '16:00', '20:00'],
-                datasets: [{
-                    label: 'System Efficiency',
-                    data: [85, 82, 89, 92, 88, 91],
-                    borderColor: '#007bff',
-                    backgroundColor: 'rgba(0, 123, 255, 0.1)',
-                    fill: true,
-                    tension: 0.4
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: { legend: { display: false } },
-                scales: {
-                    x: { display: false },
-                    y: { display: false }
-                }
-            }
-        });
-    }
+    // --- LIVE OEE DATA SIMULATION ---
+    const updateOEE = () => {
+        const availability = (98 + Math.random() * 1.5).toFixed(1);
+        const performance = (94 + Math.random() * 2).toFixed(1);
+        const quality = (99.5 + Math.random() * 0.4).toFixed(1);
+        const kw = (84 + Math.random() * 2).toFixed(1);
 
-    const ctxLive = document.getElementById('liveOeeChart');
-    let liveChart;
-    if (ctxLive) {
-        liveChart = new Chart(ctxLive, {
-            type: 'bar',
-            data: {
-                labels: ['Line A', 'Line B', 'Line C', 'Line D', 'Line E'],
-                datasets: [{
-                    label: 'OEE %',
-                    data: [78, 85, 92, 81, 88],
-                    backgroundColor: [
-                        'rgba(0, 123, 255, 0.6)',
-                        'rgba(16, 185, 129, 0.6)',
-                        'rgba(0, 212, 255, 0.6)',
-                        'rgba(245, 158, 11, 0.6)',
-                        'rgba(139, 92, 246, 0.6)'
-                    ],
-                    borderRadius: 8
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: { legend: { display: false } },
-                scales: {
-                    y: { beginAtZero: true, max: 100, grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#64748b' } },
-                    x: { grid: { display: false }, ticks: { color: '#64748b' } }
-                }
-            }
-        });
+        const availabilityEl = document.getElementById('oee-val-availability');
+        const performanceEl = document.getElementById('oee-val-performance');
+        const qualityEl = document.getElementById('oee-val-quality');
+        const qualityBar = document.getElementById('oee-bar-quality');
+        const kwEl = document.getElementById('live-kw');
+        const primaryOee = document.getElementById('oee-val-primary');
+        const oeeRing = document.getElementById('oee-ring');
 
-        // Live Data Simulation
-        setInterval(() => {
-            // Update Chart
-            liveChart.data.datasets[0].data = liveChart.data.datasets[0].data.map(val => {
-                const change = (Math.random() - 0.5) * 4;
-                return Math.min(100, Math.max(60, val + change));
-            });
-            liveChart.update('none');
+        if (availabilityEl) availabilityEl.innerText = `${availability}%`;
+        if (performanceEl) performanceEl.innerText = `${performance}%`;
+        if (qualityEl) qualityEl.innerText = `${quality}%`;
+        if (qualityBar) qualityBar.style.width = `${quality}%`;
+        if (kwEl) kwEl.innerText = kw;
 
-            // Update Metrics
-            document.getElementById('live-temp').innerText = (40 + Math.random() * 5).toFixed(1) + '°C';
-            document.getElementById('live-pressure').innerText = (6 + Math.random() * 0.5).toFixed(1) + ' Bar';
-            document.getElementById('live-energy').innerText = (12 + Math.random() * 1).toFixed(1) + ' kW';
-        }, 2000);
-    }
+        // Calculate a composite OEE for the primary ring
+        const composite = ((availability * performance * quality) / 10000).toFixed(0);
+        if (primaryOee) primaryOee.innerText = `${composite}%`;
+        
+        // Update SVG ring offset (Full circle is ~163.3 dasharray)
+        if (oeeRing) {
+            const offset = 163.3 - (163.3 * (composite / 100));
+            oeeRing.style.strokeDashoffset = offset;
+        }
+    };
 
-    // 6. Contact Form Handling
-    const contactForm = document.getElementById('contactForm');
-    const feedbackDiv = document.getElementById('formFeedback');
+    setInterval(updateOEE, 3000); // Update every 3 seconds
 
-    if (contactForm) {
-        contactForm.addEventListener('submit', function (event) {
-            event.preventDefault();
-            
-            const submitButton = contactForm.querySelector('button[type="submit"]');
-            const originalBtnText = submitButton.innerHTML;
-            
-            submitButton.disabled = true;
-            submitButton.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
-
-            const formData = new FormData(contactForm);
-
-            fetch('submit_form.php', {
-                method: 'POST',
-                body: formData,
-                headers: { 'X-Requested-With': 'XMLHttpRequest' }
-            })
-            .then(response => response.json())
-            .then(data => {
-                if (data.status === 'success') {
-                    feedbackDiv.innerHTML = `<div class="alert alert-success mt-3"><i class="fas fa-check-circle me-2"></i>${data.message || 'Message sent successfully!'}</div>`;
-                    contactForm.reset();
-                } else {
-                    feedbackDiv.innerHTML = `<div class="alert alert-danger mt-3"><i class="fas fa-exclamation-circle me-2"></i>${data.message || 'An error occurred.'}</div>`;
-                }
-            })
-            .catch(error => {
-                feedbackDiv.innerHTML = `<div class="alert alert-danger mt-3"><i class="fas fa-exclamation-triangle me-2"></i>Network error. Please try again.</div>`;
-            })
-            .finally(() => {
-                submitButton.disabled = false;
-                submitButton.innerHTML = originalBtnText;
-            });
-        });
-    }
-
-    // Smooth Scrolling for all links
+    // Smooth Scroll for Nav Links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
             const target = document.querySelector(this.getAttribute('href'));
             if (target) {
                 window.scrollTo({
-                    top: target.offsetTop - 70,
+                    top: target.offsetTop - 80,
                     behavior: 'smooth'
                 });
             }

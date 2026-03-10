@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-
-Sitemap: https://aniketsjagtap.github.io/JagTechno/sitemap.xml
+Sitemap: https://jagtechno.org/sitemap.xml
